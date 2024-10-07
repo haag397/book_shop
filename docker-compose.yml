@@ -3,15 +3,16 @@ secrets:
   database_password:
     file : ./configs/secrets/database_password.txt
 services:
-  elendil:
+  library:
     build: .
-    command: python app/manage.py runserver 0.0.0.0:8000
+    command: python library/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/library
     ports:
       - "8000:8000"
-    depends_on:
-      - db
+    depends_on: 
+      db:
+        condition: service_healthy
     secrets:
       - database_password
     environment:

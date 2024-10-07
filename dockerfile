@@ -1,4 +1,4 @@
-FROM python:3.8.10-slim-bullseye
+FROM python:3.8.10
 
 ENV PIP_DEFAULT_TIMEOUT=100 \
     #* Allow statements and log messages to immediately appear
@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-WORKDIR /sedr
+WORKDIR /library
 
 EXPOSE 8000
 
