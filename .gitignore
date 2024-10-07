@@ -131,4 +131,4 @@ media/
 *.txt
 configs/secrets/
 /configs/secrets/database_password.txt
-/configs/secrets/*
+**/configs/secrets/*
